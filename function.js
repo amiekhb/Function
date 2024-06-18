@@ -64,13 +64,78 @@ console.log("max:", ugugdul(15, 35));
 
 //2.Өгөгдсөн array -аас өгөгдсөн тоо байгаа эсэхийг олох функц бич. Тухайн тоо байвал индексийг буцаана. Байхгүй бол -1 буцаана.
 // array = [1, 2, 3, 4, 5];
-function too(x, array = [1, 2, 3, 4, 5]) {
-  for (let i = 0; i < array.length; i++)
-    if (x === array[i]) {
-      return x;
-    } else if (x !== array[i]) {
-      return -1;
+
+// for (let i = 0; i < array.length; i++)
+// while (i < array.length) {
+//   function too(x, array = [1, 2, 3, 4, 5]) {
+//     if (x === array[i]) {
+//       return array[i];
+//     } else if (x !== array[i]) {
+//       return -1;
+//     }
+//     i++;
+//   }
+// }
+// let x = 3;
+// console.log("search:", too);
+
+let arr = [1, 2, 3, 4, 5];
+function findIndex(searchArr, findToo) {
+  console.log("search arr:", arr);
+  console.log("find number:", findToo);
+  for (let i = 0; i < searchArr.length; i++) {
+    if (searchArr[i] === findToo) {
+      return i;
     }
+  }
+  return -1;
 }
-x = 3;
-console.log("search:", hailt);
+let idx = findIndex(arr, 3);
+console.log("index:", idx);
+idx = findIndex([23, 4, 5, 6, 76], 53);
+console.log("Index:", idx);
+idx = findIndex([23, 4, 5, 6, 76], 76);
+console.log("Index:", idx);
+//3.Өгөгдсөн тэмдэгт мөрөөс -аас өгөгдсөн тэмдэгт байгаа эсэхийг олох функц бич. Тухайн тэмдэгт байвал индексийг буцаана. Байхгүй бол -1 буцаана.
+
+//4. Өгөгдсөн array - ийн дундажыг олох функц бич.
+let arra = [23, 4, 5, 6, 76];
+function dundaj_oloh(ugugdul) {
+  let mean = 0;
+  let sum = 0;
+  for (let i = 0; i < ugugdul.length; i++) {
+    sum += ugugdul[i];
+    mean = sum / ugugdul.length;
+  }
+  return mean;
+}
+let arrayDundaj = dundaj_oloh(arra);
+console.log("dundaj:", arrayDundaj);
+
+//5. Өгөгдсөн array - ийн нийлбэрийг олох функц бич.
+let array = [23, 4, 5, 6, 76];
+function niilber_oloh(ugugdul) {
+  let sum = 0;
+  for (let i = 0; i < ugugdul.length; i++) {
+    sum += ugugdul[i];
+  }
+  return sum;
+}
+let nemsen = niilber_oloh(array);
+console.log("niilber:", nemsen);
+
+//6. Өгөгдсөн тоо анхны эсэхийг олох функц бич
+function too(x) {
+  if (x<=1) return false {
+    return x;
+  }
+  return null;
+}
+let anhnii_too = too(2);
+console.log("anhnii too:", anhnii_too);
+
+
+
+//library
+let mm = Math.max(22, 12, 14, 15, 9);
+console.log("max:", mm);
