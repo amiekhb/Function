@@ -125,17 +125,37 @@ let nemsen = niilber_oloh(array);
 console.log("niilber:", nemsen);
 
 //6. Өгөгдсөн тоо анхны эсэхийг олох функц бич
-function too(x) {
-  if (x<=1) return false {
-    return x;
-  }
-  return null;
+function prime_number(x) {
+  if (x<=1) return false 
+  for(i=2;i<x;i++){
+    if(x%i===0){
+      return false
+    }
+  } return true
 }
-let anhnii_too = too(2);
-console.log("anhnii too:", anhnii_too);
+let anhnii_too = prime_number(6);
+console.log("anhnii too eseh:", anhnii_too);
 
 
 
 //library
 let mm = Math.max(22, 12, 14, 15, 9);
 console.log("max:", mm);
+//7.Palindrome too eseh jishee ni: input: 121 output: true, input: -121 output: false, input: 12  output: false
+function checkPalindrome(utga){
+  if(utga.length === 1) 
+    return true;
+
+  if(utga.length === 2) 
+    return utga[0] === utga[1];
+
+  if(utga[0] === Number.slice(-1)) 
+    return checkPalindrome(Number.slice(1,-1))
+
+  return false;
+}
+
+console.log(checkPalindrome(121)) 
+console.log(checkPalindrome('madam')) 
+console.log(checkPalindrome('naraa')) 
+//8.Ugugdsun string urvuulna gargah jishee ni: input: hello output: olleh
